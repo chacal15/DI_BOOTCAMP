@@ -1,5 +1,5 @@
 class Cat:
-    def init(self, name, age):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
 
@@ -17,7 +17,7 @@ print(f"Le chat le plus âgé est {oldest.name}, et a {oldest.age} ans.")
 #exercice2
 
 class Dog:
-    def init(self, name, height):
+    def __init__(self, name, height):
         self.name = name
         self.height = height
 
@@ -45,7 +45,7 @@ else:
     #exercie3
     
 class Song:
-    def init(self, lyrics):
+    def __init__(self, lyrics):
         self.lyrics = lyrics
 
     def sing_me_a_song(self):
@@ -62,7 +62,7 @@ stairway.sing_me_a_song()
 #exercice4
 
 class Zoo:
-    def init(self, name):
+    def __init__(self, name):
         self.name = name
         self.animals = []
 
