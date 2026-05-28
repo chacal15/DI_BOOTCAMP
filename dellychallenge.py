@@ -1,5 +1,5 @@
 class Farm:
-    def init(self, farm_name):
+    def __init__(self, farm_name):
         self.name = farm_name
         self.animals = {}
 
