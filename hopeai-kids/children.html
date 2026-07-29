@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des enfants - HopeAI Kids</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236C63FF' rx='20' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='60'>🌟</text></svg>">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🌟</div>
+        <span class="sidebar-logo-text">Hope<span>AI</span></span>
+      </a>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Principal</div>
+        <a href="dashboard.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+          Tableau de bord
+        </a>
+        <a href="assistant.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Assistant IA
+        </a>
+        <a href="education.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Éducation
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Gestion</div>
+        <a href="children.html" class="sidebar-nav-item active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Enfants
+        </a>
+        <a href="attendance.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Présences
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Système</div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Paramètres
+        </a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="sidebar-user" onclick="App.logout()" style="cursor: pointer;">
+        <div class="avatar">MD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Marie Dupont</div>
+          <div class="sidebar-user-role">Administrateur</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <header class="main-header">
+      <div class="header-left">
+        <button class="header-btn hide-desktop" onclick="App.toggleSidebar()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1 class="header-title">Gestion des enfants</h1>
+      </div>
+      
+      <div class="header-right">
+        <div class="header-search">
+          <svg class="form-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="searchChildren" class="form-input" placeholder="Rechercher un enfant...">
+        </div>
+        
+        <button class="btn btn-primary" onclick="openAddChildModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Ajouter
+        </button>
+        
+        <button class="header-btn" data-theme-toggle onclick="App.toggleTheme()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+    <main class="main-content">
+      <!-- Stats -->
+      <div class="children-stats">
+        <div class="card stats-card">
+          <div class="stats-icon primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="stats-content">
+            <div class="stats-value" id="totalChildren">5</div>
+            <div class="stats-label">Enfants inscrits</div>
+          </div>
+        </div>
+        
+        <div class="card stats-card">
+          <div class="stats-icon success">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="stats-content">
+            <div class="stats-value" id="presentToday">4</div>
+            <div class="stats-label">Présents aujourd'hui</div>
+          </div>
+        </div>
+        
+        <div class="card stats-card">
+          <div class="stats-icon warning">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="stats-content">
+            <div class="stats-value" id="totalXP">2320</div>
+            <div class="stats-label">XP total gagnés</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Children List -->
+      <div class="children-header">
+        <h2>Liste des enfants</h2>
+        <div style="display: flex; gap: 8px;">
+          <select class="form-input form-select" style="width: auto;" onchange="filterChildren(this.value)">
+            <option value="all">Toutes les classes</option>
+            <option value="CP">CP</option>
+            <option value="CE2">CE2</option>
+            <option value="CM1">CM1</option>
+            <option value="CM2">CM2</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="childrenList" class="children-list">
+        <!-- Populated by JS -->
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add/Edit Child Modal -->
+  <div id="childModal" class="modal modal-lg">
+    <div class="modal-header">
+      <h3 class="modal-title" id="childModalTitle">Ajouter un enfant</h3>
+      <button class="modal-close" data-modal-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="childForm">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="form-group">
+            <label class="form-label required" for="childName">Nom complet</label>
+            <input type="text" id="childName" name="name" class="form-input" placeholder="Aminata Koné" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label required" for="childAge">Âge</label>
+            <input type="number" id="childAge" name="age" class="form-input" placeholder="8" min="3" max="18" required>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div class="form-group">
+            <label class="form-label required" for="childClass">Classe</label>
+            <select id="childClass" name="class" class="form-input form-select" required>
+              <option value="">Sélectionner...</option>
+              <option value="CP">CP</option>
+              <option value="CE1">CE1</option>
+              <option value="CE2">CE2</option>
+              <option value="CM1">CM1</option>
+              <option value="CM2">CM2</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label required" for="childBirthDate">Date de naissance</label>
+            <input type="date" id="childBirthDate" name="birthDate" class="form-input" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Activités préférées</label>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="lecture">
+              <span class="form-check-label">📖 Lecture</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="dessin">
+              <span class="form-check-label">🎨 Dessin</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="mathematiques">
+              <span class="form-check-label">🔢 Mathématiques</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="jeux">
+              <span class="form-check-label">🎮 Jeux</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="science">
+              <span class="form-check-label">🔬 Sciences</span>
+            </label>
+            <label class="form-check">
+              <input type="checkbox" class="form-check-input" name="favoriteActivities" value="histoires">
+              <span class="form-check-label">📚 Histoires</span>
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-modal-close>Annuler</button>
+      <button class="btn btn-primary" onclick="document.getElementById('childForm').dispatchEvent(new Event('submit'))">
+        Enregistrer
+      </button>
+    </div>
+  </div>
+  
+  <!-- Child Detail Modal -->
+  <div id="childDetailModal" class="modal modal-lg">
+    <div class="child-detail-header">
+      <div class="child-detail-avatar">👧</div>
+      <div class="child-detail-info">
+        <h3>Nom de l'enfant</h3>
+        <p>Classe • Âge ans</p>
+      </div>
+      <button class="modal-close" data-modal-close style="margin-left: auto; color: white;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="child-detail-section">
+          <h4>Informations</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <p><strong>Date de naissance:</strong> <span data-field="birthDate">-</span></p>
+            <p><strong>Inscrit le:</strong> <span data-field="createdAt">-</span></p>
+          </div>
+        </div>
+        
+        <div class="child-detail-section">
+          <h4>Progression</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <p><strong>Activités:</strong> <span data-field="progress">-</span></p>
+            <p><strong>XP Total:</strong> <span data-field="xp">-</span></p>
+            <p><strong>Niveau:</strong> <span data-field="level">-</span></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="child-detail-section">
+        <h4>Activité récente</h4>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon" style="color: var(--color-primary);">📝</div>
+            <div class="activity-content">
+              <div class="activity-title">Quiz de Mathématiques</div>
+              <div class="activity-meta">Score: 85% • +85 XP</div>
+            </div>
+            <div class="activity-time">Il y a 2h</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="child-detail-section">
+        <h4>Progression par catégorie</h4>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <div class="progress-label">
+              <span class="progress-title">Quiz</span>
+              <span class="progress-value">12 quiz</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div>
+            <div class="progress-label">
+              <span class="progress-title">Histoires</span>
+              <span class="progress-value">5 histoires</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 40%; background: linear-gradient(90deg, var(--color-secondary), var(--color-secondary-dark));"></div>
+            </div>
+          </div>
+          <div>
+            <div class="progress-label">
+              <span class="progress-title">Jeux</span>
+              <span class="progress-value">8 jeux</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" style="width: 50%; background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-1-dark));"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-danger" onclick="deleteCurrentChild()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+        Supprimer
+      </button>
+      <button class="btn btn-primary" onclick="editCurrentChild()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+        Modifier
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-list">
+      <a href="dashboard.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="9"></rect>
+          <rect x="14" y="3" width="7" height="5"></rect>
+          <rect x="14" y="12" width="7" height="9"></rect>
+          <rect x="3" y="16" width="7" height="5"></rect>
+        </svg>
+        <span>Accueil</span>
+      </a>
+      <a href="assistant.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>IA</span>
+      </a>
+      <a href="education.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Éducation</span>
+      </a>
+      <a href="children.html" class="mobile-nav-item active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+        </svg>
+        <span>Enfants</span>
+      </a>
+      <a href="settings.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Paramètres</span>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  <div class="modal-backdrop"></div>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    let currentChildId = null;
+    
+    // Open add child modal
+    function openAddChildModal() {
+      document.getElementById('childModalTitle').textContent = 'Ajouter un enfant';
+      document.getElementById('childForm').reset();
+      delete document.getElementById('childForm').dataset.editingId;
+      App.openModal('childModal');
+    }
+    
+    // Filter children by class
+    function filterChildren(classFilter) {
+      document.querySelectorAll('.child-card').forEach(card => {
+        const childClass = card.querySelector('.child-card-info p').textContent.split(' • ')[0];
+        if (classFilter === 'all' || childClass === classFilter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+    
+    // View child detail
+    function viewChildDetail(childId) {
+      const child = App.state.children.find(c => c.id === childId);
+      if (!child) return;
+      
+      currentChildId = childId;
+      
+      const modal = document.getElementById('childDetailModal');
+      modal.querySelector('.child-detail-info h3').textContent = child.name;
+      modal.querySelector('.child-detail-info p').textContent = `${child.class} • ${child.age} ans`;
+      modal.querySelector('[data-field="birthDate"]').textContent = utils.formatDate(child.birthDate);
+      modal.querySelector('[data-field="createdAt"]').textContent = utils.formatDate(child.createdAt);
+      modal.querySelector('[data-field="progress"]').textContent = `${child.progress.quizzes + child.progress.stories + child.progress.games} activités`;
+      modal.querySelector('[data-field="xp"]').textContent = `${child.totalXP} XP`;
+      modal.querySelector('[data-field="level"]').textContent = `Niveau ${child.level}`;
+      
+      App.openModal('childDetailModal');
+    }
+    
+    // Edit current child
+    function editCurrentChild() {
+      if (currentChildId) {
+        App.editChild(currentChildId);
+      }
+    }
+    
+    // Delete current child
+    function deleteCurrentChild() {
+      if (currentChildId) {
+        App.deleteChild(currentChildId);
+        App.closeModal('childDetailModal');
+        currentChildId = null;
+      }
+    }
+    
+    // Update stats
+    function updateStats() {
+      document.getElementById('totalChildren').textContent = App.state.children.length;
+      
+      const today = new Date().toISOString().split('T')[0];
+      const todayAttendance = App.state.attendance.filter(a => a.date === today);
+      const presentCount = todayAttendance.filter(a => a.status !== 'absent').length;
+      document.getElementById('presentToday').textContent = presentCount;
+      
+      const totalXP = App.state.children.reduce((sum, c) => sum + c.totalXP, 0);
+      document.getElementById('totalXP').textContent = totalXP;
+    }
+    
+    // Initialize search
+    document.addEventListener('DOMContentLoaded', () => {
+      initSearch('#searchChildren', '#childrenList', '.child-card', ['name', 'class']);
+      updateStats();
+    });
+  </script>
+</body>
+</html>

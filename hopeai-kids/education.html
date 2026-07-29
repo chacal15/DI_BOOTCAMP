@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éducation - HopeAI Kids</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236C63FF' rx='20' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='60'>🌟</text></svg>">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🌟</div>
+        <span class="sidebar-logo-text">Hope<span>AI</span></span>
+      </a>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Principal</div>
+        <a href="dashboard.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+          Tableau de bord
+        </a>
+        <a href="assistant.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Assistant IA
+        </a>
+        <a href="education.html" class="sidebar-nav-item active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Éducation
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Gestion</div>
+        <a href="children.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Enfants
+        </a>
+        <a href="attendance.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Présences
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Système</div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Paramètres
+        </a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="sidebar-user" onclick="App.logout()" style="cursor: pointer;">
+        <div class="avatar">MD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Marie Dupont</div>
+          <div class="sidebar-user-role">Administrateur</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <header class="main-header">
+      <div class="header-left">
+        <button class="header-btn hide-desktop" onclick="App.toggleSidebar()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1 class="header-title">Espace Éducatif</h1>
+      </div>
+      
+      <div class="header-right">
+        <button class="header-btn" data-theme-toggle onclick="App.toggleTheme()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+    <main class="main-content">
+      <!-- Hero Section -->
+      <div class="education-hero">
+        <h2>👋 Bienvenue dans ton espace d'apprentissage!</h2>
+        <p>Choisis une activité pour commencer. Tu peux faire des quiz, lire des histoires, jouer à des jeux éducatifs ou travailler sur tes devoirs.</p>
+        
+        <div class="education-progress">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-weight: 600;">Ta progression</span>
+            <span>450 / 1000 XP</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 45%;"></div>
+          </div>
+          <div style="margin-top: 8px; display: flex; gap: 16px;">
+            <span class="badge badge-success">Niveau 3</span>
+            <span class="badge badge-warning">15 jours consécutifs</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Category Tabs -->
+      <div class="education-tabs">
+        <button class="education-tab active" onclick="showCategory('all', this)">Tous</button>
+        <button class="education-tab" onclick="showCategory('quiz', this)">📝 Quiz</button>
+        <button class="education-tab" onclick="showCategory('story', this)">📖 Histoires</button>
+        <button class="education-tab" onclick="showCategory('homework', this)">📚 Aide aux devoirs</button>
+        <button class="education-tab" onclick="showCategory('games', this)">🎮 Jeux</button>
+      </div>
+      
+      <!-- Activities Grid -->
+      <div class="education-grid" id="activitiesGrid">
+        <!-- Quiz Cards -->
+        <div class="education-card" data-category="quiz" onclick="startQuiz('math')">
+          <div class="education-card-image quiz">
+            <span>🔢</span>
+            <span class="education-card-badge">Populaire</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Quiz de Mathématiques</h3>
+            <p class="education-card-description">Teste tes connaissances en calcul, géométrie et problèmes.</p>
+            <div class="education-card-meta">
+              <span>📊 10 questions</span>
+              <span>⭐ +100 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="quiz" onclick="startQuiz('science')">
+          <div class="education-card-image quiz">
+            <span>🔬</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Quiz de Sciences</h3>
+            <p class="education-card-description">Découvre les merveilles de la nature et de l'univers.</p>
+            <div class="education-card-meta">
+              <span>📊 8 questions</span>
+              <span>⭐ +80 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="quiz" onclick="startQuiz('history')">
+          <div class="education-card-image quiz">
+            <span>🏛️</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Quiz d'Histoire</h3>
+            <p class="education-card-description">Parcours les grandes époques et personnages historiques.</p>
+            <div class="education-card-meta">
+              <span>📊 12 questions</span>
+              <span>⭐ +120 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Story Cards -->
+        <div class="education-card" data-category="story" onclick="startStory('lion')">
+          <div class="education-card-image story">
+            <span>🦁</span>
+            <span class="education-card-badge">Nouveau</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Le Lion et la Souris</h3>
+            <p class="education-card-description">Une histoire sur l'amitié et la gentillesse.</p>
+            <div class="education-card-meta">
+              <span>📖 5 min</span>
+              <span>⭐ +30 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="story" onclick="startStory('dragon')">
+          <div class="education-card-image story">
+            <span>🐉</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">L'Écureuil et le Dragon</h3>
+            <p class="education-card-description">Une aventure magique dans la forêt enchantée.</p>
+            <div class="education-card-meta">
+              <span>📖 8 min</span>
+              <span>⭐ +50 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="story" onclick="startStory('ocean')">
+          <div class="education-card-image story">
+            <span>🐠</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Les Secrets de l'Océan</h3>
+            <p class="education-card-description">Explore les profondeurs marines avec des poissons colorés.</p>
+            <div class="education-card-meta">
+              <span>📖 6 min</span>
+              <span>⭐ +40 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Homework Cards -->
+        <div class="education-card" data-category="homework" onclick="startHomework('reading')">
+          <div class="education-card-image homework">
+            <span>📖</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Exercices de Lecture</h3>
+            <p class="education-card-description">Compréhension de textes et vocabulaire.</p>
+            <div class="education-card-meta">
+              <span>📝 5 exercices</span>
+              <span>⭐ +50 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="homework" onclick="startHomework('writing')">
+          <div class="education-card-image homework">
+            <span>✏️</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Exercices d'Écriture</h3>
+            <p class="education-card-description">Grammaire, conjugaison et rédaction.</p>
+            <div class="education-card-meta">
+              <span>📝 4 exercices</span>
+              <span>⭐ +40 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Game Cards -->
+        <div class="education-card" data-category="games" onclick="startGame('memory')">
+          <div class="education-card-image games">
+            <span>🧠</span>
+            <span class="education-card-badge">Fun</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Memory des Animaux</h3>
+            <p class="education-card-description">Trouve les paires d'animaux et entraîne ta mémoire!</p>
+            <div class="education-card-meta">
+              <span>🎮 3 niveaux</span>
+              <span>⭐ +60 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="games" onclick="startGame('puzzle')">
+          <div class="education-card-image games">
+            <span>🧩</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Puzzles des Couleurs</h3>
+            <p class="education-card-description">Associe les couleurs et complète les motifs.</p>
+            <div class="education-card-meta">
+              <span>🎮 5 niveaux</span>
+              <span>⭐ +40 XP</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="education-card" data-category="games" onclick="startGame('spell')">
+          <div class="education-card-image games">
+            <span>🔤</span>
+          </div>
+          <div class="education-card-content">
+            <h3 class="education-card-title">Dictée Magique</h3>
+            <p class="education-card-description">Écoute et écris les mots correctement.</p>
+            <div class="education-card-meta">
+              <span>🎮 10 mots</span>
+              <span>⭐ +70 XP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Quiz Modal -->
+  <div id="quizModal" class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title" id="quizTitle">Quiz de Mathématiques</h3>
+      <button class="modal-close" data-modal-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="quiz-container">
+        <div class="quiz-progress">
+          <div class="quiz-question-number">Question <span id="questionNumber">1</span> / <span id="totalQuestions">10</span></div>
+          <div class="progress" style="margin-top: 8px;">
+            <div class="progress-bar" id="quizProgressBar" style="width: 10%;"></div>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <div class="quiz-question-header">
+            <p class="quiz-question-text" id="questionText">Combien font 5 + 3?</p>
+          </div>
+          
+          <div class="quiz-options" id="quizOptions">
+            <div class="quiz-option" onclick="selectOption(this, 0)">
+              <span class="quiz-option-letter">A</span>
+              <span class="quiz-option-text">6</span>
+            </div>
+            <div class="quiz-option" onclick="selectOption(this, 1)">
+              <span class="quiz-option-letter">B</span>
+              <span class="quiz-option-text">7</span>
+            </div>
+            <div class="quiz-option" onclick="selectOption(this, 2)">
+              <span class="quiz-option-letter">C</span>
+              <span class="quiz-option-text">8</span>
+            </div>
+            <div class="quiz-option" onclick="selectOption(this, 3)">
+              <span class="quiz-option-letter">D</span>
+              <span class="quiz-option-text">9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-modal-close>Quitter</button>
+      <button class="btn btn-primary" id="nextQuestionBtn" onclick="nextQuestion()">Suivant</button>
+    </div>
+  </div>
+  
+  <!-- Quiz Result Modal -->
+  <div id="quizResultModal" class="modal">
+    <div class="modal-body" style="text-align: center; padding: 48px;">
+      <div style="font-size: 80px; margin-bottom: 24px;">🎉</div>
+      <h2 style="margin-bottom: 16px;">Quiz Terminé!</h2>
+      <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 24px;">
+        Tu as obtenu <strong id="quizScore">8</strong> / <strong id="quizTotal">10</strong> bonnes réponses!
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 24px;">
+        <span class="badge badge-success" style="font-size: 14px;">+80 XP</span>
+        <span class="badge badge-warning" style="font-size: 14px;">Niveau suivant!</span>
+      </div>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button class="btn btn-outline" onclick="closeModal('quizResultModal')">Retour</button>
+        <button class="btn btn-primary" onclick="retryQuiz()">Rejouer</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-list">
+      <a href="dashboard.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="9"></rect>
+          <rect x="14" y="3" width="7" height="5"></rect>
+          <rect x="14" y="12" width="7" height="9"></rect>
+          <rect x="3" y="16" width="7" height="5"></rect>
+        </svg>
+        <span>Accueil</span>
+      </a>
+      <a href="assistant.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>IA</span>
+      </a>
+      <a href="education.html" class="mobile-nav-item active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Éducation</span>
+      </a>
+      <a href="children.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+        </svg>
+        <span>Enfants</span>
+      </a>
+      <a href="settings.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Paramètres</span>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  <div class="modal-backdrop"></div>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Quiz data
+    const quizzes = {
+      math: {
+        title: 'Quiz de Mathématiques',
+        questions: [
+          { question: 'Combien font 5 + 3?', options: ['6', '7', '8', '9'], correct: 2 },
+          { question: 'Combien font 12 - 4?', options: ['6', '7', '8', '9'], correct: 2 },
+          { question: 'Combien font 4 × 3?', options: ['10', '11', '12', '14'], correct: 2 },
+          { question: 'Combien font 20 ÷ 5?', options: ['3', '4', '5', '6'], correct: 1 },
+          { question: 'Quelle est la moitié de 14?', options: ['6', '7', '8', '9'], correct: 1 },
+          { question: 'Combien font 25 + 17?', options: ['40', '41', '42', '43'], correct: 2 },
+          { question: 'Combien font 100 - 36?', options: ['62', '63', '64', '65'], correct: 2 },
+          { question: 'Combien font 6 × 6?', options: ['30', '36', '42', '48'], correct: 1 },
+          { question: 'Quelle est le tiers de 15?', options: ['3', '4', '5', '6'], correct: 2 },
+          { question: 'Combien font 8 + 9 + 3?', options: ['18', '19', '20', '21'], correct: 2 }
+        ]
+      },
+      science: {
+        title: 'Quiz de Sciences',
+        questions: [
+          { question: 'De quelle couleur est le ciel par temps ensoleillé?', options: ['Rouge', 'Vert', 'Bleu', 'Jaune'], correct: 2 },
+          { question: 'Combien de pattes a une araignée?', options: ['6', '8', '10', '4'], correct: 1 },
+          { question: 'Quel animal est connu comme le roi de la jungle?', options: ['Éléphant', 'Lion', 'Tigre', 'Ours'], correct: 1 },
+          { question: "L'eau gelée s'appelle...", options: ['Vapeur', 'Glace', 'Pluie', 'Neige'], correct: 1 },
+          { question: 'De quoi les plantes ont-elles besoin pour grandir?', options: ['Chaussures', 'Soleil et eau', 'Télévision', 'Musique'], correct: 1 },
+          { question: 'Combien de jours y a-t-il dans une semaine?', options: ['5', '6', '7', '8'], correct: 2 },
+          { question: 'Quel est le plus grand océan?', options: ['Atlantique', 'Indien', 'Arctique', 'Pacifique'], correct: 3 },
+          { question: 'Combien de os y a-t-il dans le corps humain?', options: ['106', '206', '306', '406'], correct: 1 }
+        ]
+      },
+      history: {
+        title: "Quiz d'Histoire",
+        questions: [
+          { question: 'Qui a découvert l\'Amérique?', options: ['Magellan', 'Colomb', 'Vasco de Gama', 'Copernic'], correct: 1 },
+          { question: 'En quelle année a eu lieu la Révolution française?', options: ['1689', '1789', '1889', '1989'], correct: 1 },
+          { question: 'Qui était Napoleon?', options: ['Un scientifique', 'Un empereur', 'Un artiste', 'Un athlete'], correct: 1 },
+          { question: 'Où se trouve la tour Eiffel?', options: ['Londres', 'Paris', 'Rome', 'Berlin'], correct: 1 },
+          { question: 'Qui a peint la Joconde?', options: ['Michel-Ange', 'Léonard de Vinci', 'Raphaël', 'Van Gogh'], correct: 1 },
+          { question: 'Quelle est la plus ancienne civilisation?', options: ['Grecque', 'Romaine', 'Egyptienne', 'Chinoise'], correct: 2 },
+          { question: 'Qui a été le premier homme sur la Lune?', options: ['Neil Armstrong', 'Buzz Aldrin', 'Yuri Gagarin', 'John Glenn'], correct: 0 }
+        ]
+      }
+    };
+    
+    let currentQuiz = null;
+    let currentQuestion = 0;
+    let score = 0;
+    let selectedOption = null;
+    
+    // Show category filter
+    function showCategory(category, tabElement) {
+      // Update active tab
+      document.querySelectorAll('.education-tab').forEach(tab => tab.classList.remove('active'));
+      tabElement.classList.add('active');
+      
+      // Filter cards
+      document.querySelectorAll('.education-card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+    
+    // Start quiz
+    function startQuiz(quizType) {
+      currentQuiz = quizzes[quizType];
+      currentQuestion = 0;
+      score = 0;
+      
+      document.getElementById('quizTitle').textContent = currentQuiz.title;
+      document.getElementById('totalQuestions').textContent = currentQuiz.questions.length;
+      
+      displayQuestion();
+      App.openModal('quizModal');
+    }
+    
+    // Display current question
+    function displayQuestion() {
+      const q = currentQuiz.questions[currentQuestion];
+      document.getElementById('questionNumber').textContent = currentQuestion + 1;
+      document.getElementById('questionText').textContent = q.question;
+      document.getElementById('quizProgressBar').style.width = ((currentQuestion + 1) / currentQuiz.questions.length * 100) + '%';
+      
+      const optionsContainer = document.getElementById('quizOptions');
+      optionsContainer.innerHTML = q.options.map((opt, i) => `
+        <div class="quiz-option" onclick="selectOption(this, ${i})">
+          <span class="quiz-option-letter">${String.fromCharCode(65 + i)}</span>
+          <span class="quiz-option-text">${opt}</span>
+        </div>
+      `).join('');
+      
+      selectedOption = null;
+      document.getElementById('nextQuestionBtn').textContent = currentQuestion === currentQuiz.questions.length - 1 ? 'Terminer' : 'Suivant';
+    }
+    
+    // Select option
+    function selectOption(element, index) {
+      document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+      element.classList.add('selected');
+      selectedOption = index;
+    }
+    
+    // Next question
+    function nextQuestion() {
+      if (selectedOption === null) {
+        App.showToast('warning', 'Attention', 'Veuillez sélectionner une réponse');
+        return;
+      }
+      
+      // Check answer
+      const correct = currentQuiz.questions[currentQuestion].correct;
+      const options = document.querySelectorAll('.quiz-option');
+      
+      if (selectedOption === correct) {
+        options[selectedOption].classList.add('correct');
+        score++;
+        App.showToast('success', 'Bravo!', 'Bonne réponse! 🎉');
+      } else {
+        options[selectedOption].classList.add('incorrect');
+        options[correct].classList.add('correct');
+      }
+      
+      // Move to next or finish
+      setTimeout(() => {
+        if (currentQuestion < currentQuiz.questions.length - 1) {
+          currentQuestion++;
+          displayQuestion();
+        } else {
+          finishQuiz();
+        }
+      }, 1000);
+    }
+    
+    // Finish quiz
+    function finishQuiz() {
+      App.closeModal('quizModal');
+      document.getElementById('quizScore').textContent = score;
+      document.getElementById('quizTotal').textContent = currentQuiz.questions.length;
+      App.openModal('quizResultModal');
+      
+      // Update XP
+      const xp = score * 10;
+      App.showToast('success', 'Quiz terminé!', `Tu as gagné ${xp} XP!`);
+    }
+    
+    // Retry quiz
+    function retryQuiz() {
+      App.closeModal('quizResultModal');
+      startQuiz(Object.keys(quizzes).find(key => quizzes[key] === currentQuiz));
+    }
+    
+    // Start story (placeholder)
+    function startStory(storyId) {
+      App.showToast('info', 'Histoire', 'Cette fonctionnalité arrive bientôt!');
+    }
+    
+    // Start homework (placeholder)
+    function startHomework(type) {
+      App.showToast('info', 'Devoirs', 'Cette fonctionnalité arrive bientôt!');
+    }
+    
+    // Start game (placeholder)
+    function startGame(gameId) {
+      App.showToast('info', 'Jeu', 'Cette fonctionnalité arrive bientôt!');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres - HopeAI Kids</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236C63FF' rx='20' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='60'>🌟</text></svg>">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🌟</div>
+        <span class="sidebar-logo-text">Hope<span>AI</span></span>
+      </a>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Principal</div>
+        <a href="dashboard.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+          Tableau de bord
+        </a>
+        <a href="assistant.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Assistant IA
+        </a>
+        <a href="education.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Éducation
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Gestion</div>
+        <a href="children.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Enfants
+        </a>
+        <a href="attendance.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Présences
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Système</div>
+        <a href="settings.html" class="sidebar-nav-item active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Paramètres
+        </a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="sidebar-user" onclick="App.logout()" style="cursor: pointer;">
+        <div class="avatar">MD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Marie Dupont</div>
+          <div class="sidebar-user-role">Administrateur</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <header class="main-header">
+      <div class="header-left">
+        <button class="header-btn hide-desktop" onclick="App.toggleSidebar()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1 class="header-title">Paramètres</h1>
+      </div>
+      
+      <div class="header-right">
+        <button class="header-btn" data-theme-toggle onclick="App.toggleTheme()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+    <main class="main-content">
+      <div class="settings-layout">
+        <!-- Settings Navigation -->
+        <nav class="settings-nav">
+          <a href="#profile" class="settings-nav-item active" onclick="showSettingsSection('profile')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Mon profil
+          </a>
+          <a href="#users" class="settings-nav-item" onclick="showSettingsSection('users')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            Utilisateurs
+          </a>
+          <a href="#permissions" class="settings-nav-item" onclick="showSettingsSection('permissions')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Permissions
+          </a>
+          <a href="#security" class="settings-nav-item" onclick="showSettingsSection('security')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Sécurité
+          </a>
+          <a href="#data" class="settings-nav-item" onclick="showSettingsSection('data')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+            Données
+          </a>
+          <a href="#api" class="settings-nav-item" onclick="showSettingsSection('api')">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            API & Intégrations
+          </a>
+        </nav>
+        
+        <!-- Settings Content -->
+        <div class="settings-content">
+          <!-- Profile Section -->
+          <div id="section-profile" class="settings-section">
+            <div class="settings-section-header">
+              <h2>Mon profil</h2>
+              <p class="settings-section-description">Gérez vos informations personnelles</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 24px; margin-bottom: 32px;">
+              <div class="avatar avatar-2xl">MD</div>
+              <div>
+                <h3 style="margin-bottom: 8px;">Marie Dupont</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 12px;">marie.dupont@hopeai.org</p>
+                <button class="btn btn-sm btn-outline">Changer la photo</button>
+              </div>
+            </div>
+            
+            <form id="profileForm">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label class="form-label">Nom complet</label>
+                  <input type="text" class="form-input" value="Marie Dupont">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-input" value="marie.dupont@hopeai.org">
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label class="form-label">Rôle</label>
+                  <input type="text" class="form-input" value="Administrateur" disabled>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Dernière connexion</label>
+                  <input type="text" class="form-input" value="Aujourd'hui à 09:30" disabled>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+            </form>
+          </div>
+          
+          <!-- Users Section -->
+          <div id="section-users" class="settings-section" style="display: none;">
+            <div class="settings-section-header">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h2>Gestion des utilisateurs</h2>
+                  <p class="settings-section-description">Ajoutez et gérez les comptes utilisateurs</p>
+                </div>
+                <button class="btn btn-primary" onclick="openAddUserModal()">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                  Ajouter
+                </button>
+              </div>
+            </div>
+            
+            <div class="table-container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Utilisateur</th>
+                    <th>Rôle</th>
+                    <th>Dernière connexion</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="avatar">MD</div>
+                        <div>
+                          <div style="font-weight: 600;">Marie Dupont</div>
+                          <div style="font-size: 12px; color: var(--text-secondary);">marie.dupont@hopeai.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge badge-primary">Admin</span></td>
+                    <td>Aujourd'hui 09:30</td>
+                    <td><span class="badge badge-success">Actif</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="btn btn-sm btn-ghost">Modifier</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="avatar" style="background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));">JK</div>
+                        <div>
+                          <div style="font-weight: 600;">Jean Kouassi</div>
+                          <div style="font-size: 12px; color: var(--text-secondary);">jean.kouassi@hopeai.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge badge-warning">Responsable</span></td>
+                    <td>Hier 17:45</td>
+                    <td><span class="badge badge-success">Actif</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="btn btn-sm btn-ghost">Modifier</button>
+                        <button class="btn btn-sm btn-ghost" style="color: var(--color-danger);">Désactiver</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display: flex; align-items: center; gap: 12px;">
+                        <div class="avatar" style="background: linear-gradient(135deg, var(--color-accent-1), var(--color-accent-1-dark));">SM</div>
+                        <div>
+                          <div style="font-weight: 600;">Sophie Martin</div>
+                          <div style="font-size: 12px; color: var(--text-secondary);">sophie.martin@hopeai.org</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge badge-neutral">Éducateur</span></td>
+                    <td>Il y a 2 jours</td>
+                    <td><span class="badge badge-success">Actif</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <button class="btn btn-sm btn-ghost">Modifier</button>
+                        <button class="btn btn-sm btn-ghost" style="color: var(--color-danger);">Désactiver</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Permissions Section -->
+          <div id="section-permissions" class="settings-section" style="display: none;">
+            <div class="settings-section-header">
+              <h2>Matrice des permissions</h2>
+              <p class="settings-section-description">Définissez les droits d'accès pour chaque rôle</p>
+            </div>
+            
+            <div class="table-container">
+              <table class="permissions-table">
+                <thead>
+                  <tr>
+                    <th>Fonctionnalité</th>
+                    <th>Admin</th>
+                    <th>Responsable</th>
+                    <th>Éducateur</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tableau de bord</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Assistant IA</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Espace éducatif</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Gestion des enfants</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-secondary);">Lecture seule</span></td>
+                  </tr>
+                  <tr>
+                    <td>Gestion des présences</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                  </tr>
+                  <tr>
+                    <td>Gestion des utilisateurs</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-muted);">✗</span></td>
+                    <td><span style="color: var(--color-muted);">✗</span></td>
+                  </tr>
+                  <tr>
+                    <td>Paramètres système</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-muted);">✗</span></td>
+                    <td><span style="color: var(--color-muted);">✗</span></td>
+                  </tr>
+                  <tr>
+                    <td>Export de données</td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-success);">✓</span></td>
+                    <td><span style="color: var(--color-muted);">✗</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Security Section -->
+          <div id="section-security" class="settings-section" style="display: none;">
+            <div class="settings-section-header">
+              <h2>Sécurité</h2>
+              <p class="settings-section-description">Gérez la sécurité de votre compte</p>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Changer le mot de passe</h4>
+                <p>Dernière modification il y a 30 jours</p>
+              </div>
+              <button class="btn btn-outline btn-sm">Modifier</button>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Authentification à deux facteurs</h4>
+                <p>Ajoutez une couche de sécurité supplémentaire</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" class="toggle-input">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Reconnaissance faciale</h4>
+                <p>Pour le pointage automatique des enfants</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" class="toggle-input">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Consentement biométrique</h4>
+                <p>Accord parental requis pour la reconnaissance faciale</p>
+              </div>
+              <span class="badge badge-warning">En attente</span>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>JWT Token</h4>
+                <p>Token d'authentification pour l'API</p>
+              </div>
+              <button class="btn btn-outline btn-sm" onclick="showJWTInfo()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                Générer
+              </button>
+            </div>
+          </div>
+          
+          <!-- Data Section -->
+          <div id="section-data" class="settings-section" style="display: none;">
+            <div class="settings-section-header">
+              <h2>Protection des données</h2>
+              <p class="settings-section-description">Gérez les données conformément au RGPD</p>
+            </div>
+            
+            <div class="card" style="background: var(--color-info-bg); border: 1px solid var(--color-primary); margin-bottom: 24px;">
+              <div style="display: flex; gap: 16px; align-items: flex-start;">
+                <span style="font-size: 24px;">ℹ️</span>
+                <div>
+                  <h4 style="color: var(--color-primary); margin-bottom: 8px;">Conformité RGPD</h4>
+                  <p style="font-size: 14px; color: var(--text-secondary);">
+                    HopeAI Kids respecte strictement le Règlement Général sur la Protection des Données. 
+                    Les données des enfants sont traitées avec le plus grand soin.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Consentement parental</h4>
+                <p>Autorisation requise avant toute collecte de données</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" class="toggle-input" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Export des données enfants</h4>
+                <p>Téléchargez toutes les données en format JSON</p>
+              </div>
+              <button class="btn btn-outline btn-sm" onclick="exportAllData()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Exporter
+              </button>
+            </div>
+            
+            <div class="settings-row">
+              <div class="settings-row-label">
+                <h4>Supprimer toutes les données</h4>
+                <p>Cette action est irréversible</p>
+              </div>
+              <button class="btn btn-sm" style="background: var(--color-danger); color: white;" onclick="confirmDeleteAllData()">
+                Supprimer
+              </button>
+            </div>
+          </div>
+          
+          <!-- API Section -->
+          <div id="section-api" class="settings-section" style="display: none;">
+            <div class="settings-section-header">
+              <h2>API & Intégrations</h2>
+              <p class="settings-section-description">Configurez les connexions aux services externes</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: 24px;">
+              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; background: #10a37f; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">AI</div>
+                <div>
+                  <h4>OpenAI API</h4>
+                  <p style="font-size: 14px; color: var(--text-secondary);">Pour l'assistant IA conversationnel</p>
+                </div>
+                <span class="badge badge-success" style="margin-left: auto;">Prêt</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Clé API</label>
+                <input type="password" class="form-input" placeholder="sk-..." value="sk-••••••••••••••••">
+              </div>
+              <button class="btn btn-outline btn-sm">Tester la connexion</button>
+            </div>
+            
+            <div class="card" style="margin-bottom: 24px;">
+              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; background: #4B5563; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white;">🎤</div>
+                <div>
+                  <h4>Whisper Speech-to-Text</h4>
+                  <p style="font-size: 14px; color: var(--text-secondary);">Pour la reconnaissance vocale</p>
+                </div>
+                <span class="badge badge-warning" style="margin-left: auto;">En attente</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Clé API</label>
+                <input type="password" class="form-input" placeholder="Configuration requise">
+              </div>
+              <button class="btn btn-outline btn-sm" disabled>Tester la connexion</button>
+            </div>
+            
+            <div class="card" style="margin-bottom: 24px;">
+              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; background: #3B82F6; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white;">👁️</div>
+                <div>
+                  <h4>MediaPipe / InsightFace</h4>
+                  <p style="font-size: 14px; color: var(--text-secondary);">Pour la reconnaissance faciale</p>
+                </div>
+                <span class="badge badge-warning" style="margin-left: auto;">En attente</span>
+              </div>
+              <p style="font-size: 14px; color: var(--text-secondary);">
+                Cette intégration sera utilisée pour la reconnaissance faciale des enfants lors du pointage.
+              </p>
+            </div>
+            
+            <div class="card">
+              <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                <div style="width: 48px; height: 48px; background: #336791; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">PG</div>
+                <div>
+                  <h4>PostgreSQL Database</h4>
+                  <p style="font-size: 14px; color: var(--text-secondary);">Base de données principale</p>
+                </div>
+                <span class="badge badge-success" style="margin-left: auto;">Connecté</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="form-group">
+                  <label class="form-label">Host</label>
+                  <input type="text" class="form-input" value="localhost:5432">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Database</label>
+                  <input type="text" class="form-input" value="hopeai_kids">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <!-- Add User Modal -->
+  <div id="addUserModal" class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Ajouter un utilisateur</h3>
+      <button class="modal-close" data-modal-close>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label class="form-label required">Nom complet</label>
+          <input type="text" class="form-input" placeholder="Prénom Nom" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Email</label>
+          <input type="email" class="form-input" placeholder="email@hopeai.org" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Rôle</label>
+          <select class="form-input form-select" required>
+            <option value="">Sélectionner...</option>
+            <option value="admin">Administrateur</option>
+            <option value="responsable">Responsable</option>
+            <option value="educateur">Éducateur</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label required">Mot de passe temporaire</label>
+          <input type="password" class="form-input" placeholder="Minimum 8 caractères" required>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" data-modal-close>Annuler</button>
+      <button class="btn btn-primary">Créer l'utilisateur</button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-list">
+      <a href="dashboard.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="9"></rect>
+          <rect x="14" y="3" width="7" height="5"></rect>
+          <rect x="14" y="12" width="7" height="9"></rect>
+          <rect x="3" y="16" width="7" height="5"></rect>
+        </svg>
+        <span>Accueil</span>
+      </a>
+      <a href="assistant.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>IA</span>
+      </a>
+      <a href="education.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Éducation</span>
+      </a>
+      <a href="children.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+        </svg>
+        <span>Enfants</span>
+      </a>
+      <a href="settings.html" class="mobile-nav-item active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Paramètres</span>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  <div class="modal-backdrop"></div>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // Show settings section
+    function showSettingsSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.settings-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      
+      // Show selected section
+      const section = document.getElementById('section-' + sectionId);
+      if (section) {
+        section.style.display = 'block';
+        section.style.animation = 'fadeIn var(--transition-base) forwards';
+      }
+      
+      // Update nav active state
+      document.querySelectorAll('.settings-nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      event.target.closest('.settings-nav-item').classList.add('active');
+    }
+    
+    // Open add user modal
+    function openAddUserModal() {
+      App.openModal('addUserModal');
+    }
+    
+    // Show JWT info
+    function showJWTInfo() {
+      App.showToast('info', 'JWT Token', 'La génération de tokens sera bientôt disponible pour l\'authentification API.');
+    }
+    
+    // Export all data
+    function exportAllData() {
+      const data = {
+        children: App.state.children,
+        users: App.state.users,
+        attendance: App.state.attendance,
+        activities: App.state.activities,
+        exportedAt: new Date().toISOString()
+      };
+      
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `hopeai_kids_export_${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      
+      App.showToast('success', 'Export', 'Les données ont été exportées avec succès.');
+    }
+    
+    // Confirm delete all data
+    function confirmDeleteAllData() {
+      if (confirm('Êtes-vous sûr de vouloir supprimer TOUTES les données? Cette action est IRRÉVERSIBLE.')) {
+        if (confirm('Dernière confirmation: Toutes les données seront définitivement supprimées. Continuer?')) {
+          // In production, this would call an API
+          App.showToast('success', 'Données supprimées', 'Toutes les données ont été effacées.');
+        }
+      }
+    }
+    
+    // Handle form submit
+    document.getElementById('profileForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      App.showToast('success', 'Profil', 'Vos modifications ont été enregistrées.');
+    });
+  </script>
+</body>
+</html>

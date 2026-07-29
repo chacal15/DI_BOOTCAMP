@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistant IA - HopeAI Kids</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/assistant-enhancements.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236C63FF' rx='20' width='100' height='100'/><text y='.9em' x='50%' text-anchor='middle' font-size='60'>🌟</text></svg>">
+  <style>
+    .emotion-display {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .emotion-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 12px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .emotion-chip.joy { background: var(--color-success-bg); color: var(--color-accent-1); }
+    .emotion-chip.sadness { background: var(--color-info-bg); color: var(--color-primary); }
+    .emotion-chip.fear { background: var(--color-warning-bg); color: var(--color-accent-2-dark); }
+    .emotion-chip.worry { background: rgba(255, 107, 157, 0.1); color: var(--color-secondary); }
+    
+    .voice-indicator {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .voice-bar {
+      width: 3px;
+      height: 16px;
+      background: var(--color-primary);
+      border-radius: 2px;
+      animation: voiceWave 0.5s ease-in-out infinite;
+    }
+    .voice-bar:nth-child(2) { animation-delay: 0.1s; }
+    .voice-bar:nth-child(3) { animation-delay: 0.2s; }
+    .voice-bar:nth-child(4) { animation-delay: 0.3s; }
+    @keyframes voiceWave {
+      0%, 100% { height: 8px; }
+      50% { height: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🌟</div>
+        <span class="sidebar-logo-text">Hope<span>AI</span></span>
+      </a>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Principal</div>
+        <a href="dashboard.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+          Tableau de bord
+        </a>
+        <a href="assistant.html" class="sidebar-nav-item active">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Assistant IA
+        </a>
+        <a href="education.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Éducation
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Gestion</div>
+        <a href="children.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Enfants
+        </a>
+        <a href="attendance.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Présences
+        </a>
+      </div>
+      
+      <div class="sidebar-nav-section">
+        <div class="sidebar-nav-title">Système</div>
+        <a href="settings.html" class="sidebar-nav-item">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Paramètres
+        </a>
+      </div>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="sidebar-user" onclick="App.logout()" style="cursor: pointer;">
+        <div class="avatar">MD</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Marie Dupont</div>
+          <div class="sidebar-user-role">Administrateur</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <header class="main-header">
+      <div class="header-left">
+        <button class="header-btn hide-desktop" onclick="App.toggleSidebar()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <h1 class="header-title">Assistant IA</h1>
+      </div>
+      
+      <div class="header-right">
+        <button class="header-btn" data-theme-toggle onclick="App.toggleTheme()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    
+    <main class="main-content">
+      <div class="assistant-container">
+        <!-- Assistant Header -->
+        <div class="assistant-header">
+          <div class="assistant-avatar">🤖</div>
+          <div class="assistant-info">
+            <h3>HopeAI Assistant</h3>
+            <p>Votre compagnon d'apprentissage bienveillant</p>
+          </div>
+          <div class="assistant-status">
+            <span class="status-dot"></span>
+            <span>En ligne</span>
+          </div>
+        </div>
+        
+        <!-- Messages -->
+        <div id="chatMessages" class="assistant-messages">
+          <!-- Welcome message -->
+          <div class="message ai">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+              <div class="emotion-display">
+                <span class="emotion-chip joy">😊 Joie détectée</span>
+              </div>
+              <div class="message-text">
+                Bonjour, je suis HopeAI. 🌟<br><br>
+                Je suis là pour écouter, t’aider à apprendre et proposer de petites étapes adaptées à ce que tu ressens. Tu peux écrire ou utiliser le microphone : ta voix sera retranscrite avant d’être analysée.<br><br>
+                <strong>Comment puis-je vous accompagner&nbsp;?</strong>
+              </div>
+              <div class="message-time">10:30</div>
+              <div class="message-actions">
+                <button class="message-action-btn" onclick="speakMessage(this)" title="Écouter">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                </button>
+                <button class="message-action-btn" onclick="copyMessage(this)" title="Copier">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Input Area -->
+        <div class="assistant-input-area">
+          <div id="recordingIndicator" class="recording-indicator">
+            <span class="recording-dot"></span>
+            <span class="recording-text">Écoute en cours… Parlez naturellement.</span>
+            <span class="voice-indicator" style="margin-left: auto;">
+              <span class="voice-bar"></span>
+              <span class="voice-bar"></span>
+              <span class="voice-bar"></span>
+              <span class="voice-bar"></span>
+            </span>
+          </div>
+
+          <div id="voiceTranscript" class="voice-transcript" role="status" aria-live="polite" hidden>
+            <span class="voice-transcript-icon">🎙️</span>
+            <div>
+              <div id="voiceTranscriptStatus" class="voice-transcript-status">Transcription vocale</div>
+              <div id="voiceTranscriptText" class="voice-transcript-text">Vos mots apparaîtront ici.</div>
+            </div>
+          </div>
+          
+          <div class="assistant-input-wrapper">
+            <textarea 
+              id="messageInput" 
+              class="assistant-input" 
+              placeholder="Écrivez votre message ou cliquez sur le micro pour parler…"
+              rows="1"
+            ></textarea>
+            
+            <div class="assistant-tools">
+              <button id="voiceBtn" class="assistant-tool-btn" onclick="toggleVoice()" title="Parler à HopeAI" aria-label="Parler à HopeAI" aria-pressed="false">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+              </button>
+              
+              <button id="speakBtn" class="assistant-tool-btn" onclick="toggleSpeech()" title="Activer ou désactiver la lecture vocale" aria-label="Activer ou désactiver la lecture vocale" aria-pressed="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </button>
+              
+              <button id="sendBtn" class="assistant-send-btn" onclick="sendMessage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div style="text-align: center; margin-top: 8px;">
+            <span style="font-size: 11px; color: var(--text-muted);">
+              💡 La transcription s’affiche avant l’analyse. Cliquez sur 🔊 pour écouter une réponse.
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Emotion Detection Info -->
+      <div class="card" style="margin-top: var(--space-6);">
+        <div class="card-header">
+          <h3 class="card-title">🎭 Détection des émotions</h3>
+        </div>
+        <div class="card-body">
+          <p style="margin-bottom: var(--space-4);">
+            Chaque message — tapé ou retranscrit depuis la voix — est analysé pour proposer un accompagnement simple et adapté&nbsp;:
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <span class="emotion-chip joy">😊 Joie</span>
+            <span class="emotion-chip sadness">😢 Tristesse</span>
+            <span class="emotion-chip fear">😨 Peur</span>
+            <span class="emotion-chip worry">😟 Inquiétude</span>
+            <span class="emotion-chip anger">😠 Colère</span>
+            <span class="emotion-chip fatigue">😴 Fatigue</span>
+          </div>
+          <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--text-muted);">
+            ⚠️ Cette analyse est une orientation conversationnelle, pas un diagnostic médical ou psychologique. En cas de danger ou de détresse, contactez immédiatement un adulte de confiance et les urgences locales si nécessaire.
+          </p>
+        </div>
+      </div>
+
+      <!-- Live accompaniment plan populated after every message -->
+      <section id="supportPlan" class="support-plan-card" aria-live="polite">
+        <div class="support-plan-heading">
+          <div>
+            <span class="section-badge">Accompagnement adapté</span>
+            <h2>Un petit plan pour avancer</h2>
+          </div>
+          <span id="supportEmotion" class="support-emotion neutral">💬 À l’écoute</span>
+        </div>
+        <p id="supportSummary" class="support-summary">Écrivez ou dictez un message : HopeAI repérera les indices émotionnels et proposera des étapes concrètes.</p>
+        <p id="supportKeywords" class="support-keywords" hidden></p>
+        <ol id="supportActions" class="support-actions">
+          <li><span class="support-step">1</span><span>Exprimez simplement ce dont vous avez besoin.</span></li>
+          <li><span class="support-step">2</span><span>Choisissez une petite étape que vous pouvez faire maintenant.</span></li>
+          <li><span class="support-step">3</span><span>Parlez à une personne de confiance si le sujet vous pèse.</span></li>
+        </ol>
+        <div id="safetyNotice" class="safety-notice" hidden>
+          <strong>Votre sécurité passe avant tout.</strong> Allez vers un adulte de confiance maintenant et contactez les urgences locales s’il y a un danger immédiat.
+        </div>
+        <div class="support-question-label">Question d’accompagnement</div>
+        <p id="supportQuestion" class="support-question">Comment puis-je vous accompagner&nbsp;?</p>
+      </section>
+    </main>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <div class="mobile-nav-list">
+      <a href="dashboard.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="9"></rect>
+          <rect x="14" y="3" width="7" height="5"></rect>
+          <rect x="14" y="12" width="7" height="9"></rect>
+          <rect x="3" y="16" width="7" height="5"></rect>
+        </svg>
+        <span>Accueil</span>
+      </a>
+      <a href="assistant.html" class="mobile-nav-item active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>IA</span>
+      </a>
+      <a href="education.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Éducation</span>
+      </a>
+      <a href="children.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+        </svg>
+        <span>Enfants</span>
+      </a>
+      <a href="settings.html" class="mobile-nav-item">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>Paramètres</span>
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/assistant.js"></script>
+
+</body>
+</html>

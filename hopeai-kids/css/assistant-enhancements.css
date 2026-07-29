@@ -1,0 +1,249 @@
+/* ============================================
+   HopeAI Kids — Voice transcription & accompaniment enhancements
+   ============================================ */
+
+.voice-transcript {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--space-3);
+  align-items: start;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-info-bg);
+  border: 1px solid rgba(108, 99, 255, 0.18);
+  border-radius: var(--radius-lg);
+  animation: fadeIn var(--transition-fast) forwards;
+}
+
+.voice-transcript[hidden] {
+  display: none;
+}
+
+.voice-transcript.is-final {
+  background: var(--color-success-bg);
+  border-color: rgba(0, 217, 165, 0.28);
+}
+
+.voice-transcript-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  font-size: 15px;
+}
+
+.voice-transcript-status {
+  margin-bottom: 2px;
+  color: var(--color-primary-dark);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.voice-transcript.is-final .voice-transcript-status {
+  color: var(--color-accent-1-dark);
+}
+
+.voice-transcript-text {
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.assistant-tool-btn.unsupported {
+  opacity: 0.55;
+}
+
+.message-source {
+  display: inline-flex;
+  margin-bottom: var(--space-2);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.emotion-chip.anger {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.emotion-chip.fatigue {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+.emotion-chip.safety {
+  color: #b42318;
+  background: rgba(255, 107, 107, 0.16);
+}
+
+.support-plan-card {
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  background:
+    radial-gradient(circle at right top, rgba(108, 99, 255, 0.1), transparent 34%),
+    var(--bg-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.support-plan-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.support-plan-heading h2 {
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.support-emotion {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 800;
+}
+
+.support-emotion.joy {
+  color: var(--color-accent-1-dark);
+  background: var(--color-success-bg);
+}
+
+.support-emotion.sadness,
+.support-emotion.worry {
+  color: var(--color-primary-dark);
+  background: var(--color-info-bg);
+}
+
+.support-emotion.fear {
+  color: var(--color-accent-2-dark);
+  background: var(--color-warning-bg);
+}
+
+.support-emotion.anger,
+.support-emotion.safety {
+  color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.support-emotion.fatigue {
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+}
+
+.support-summary {
+  max-width: 850px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.support-keywords {
+  margin-top: var(--space-3);
+  color: var(--text-secondary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.support-actions {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+}
+
+.support-actions li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: var(--space-3);
+  align-items: start;
+  color: var(--text-primary);
+  line-height: var(--leading-relaxed);
+}
+
+.support-step {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: 800;
+}
+
+.safety-notice {
+  margin: var(--space-5) 0;
+  padding: var(--space-4);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  border-radius: var(--radius-lg);
+  background: var(--color-danger-bg);
+  color: #a11d1d;
+  line-height: var(--leading-relaxed);
+}
+
+.safety-notice strong {
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.support-question-label {
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.support-question {
+  margin-top: var(--space-1);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .assistant-input-area {
+    padding: var(--space-4);
+  }
+
+  .assistant-tools {
+    gap: var(--space-1);
+  }
+
+  .assistant-tool-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .assistant-send-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .support-plan-card {
+    padding: var(--space-5);
+  }
+
+  .support-plan-heading {
+    flex-direction: column;
+  }
+
+  .support-plan-heading h2 {
+    font-size: var(--text-xl);
+  }
+}

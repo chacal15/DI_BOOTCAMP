@@ -1,0 +1,134 @@
+/* ============================================
+   HopeAI Kids - CSS Variables
+   ============================================ */
+
+:root {
+  /* Colors - Light Theme */
+  --color-primary: #6C63FF;
+  --color-primary-light: #8B85FF;
+  --color-primary-dark: #5046E5;
+  --color-secondary: #FF6B9D;
+  --color-secondary-light: #FF8FB6;
+  --color-secondary-dark: #E54D82;
+  --color-accent-1: #00D9A5;
+  --color-accent-1-light: #33E3B8;
+  --color-accent-1-dark: #00B88A;
+  --color-accent-2: #FFB547;
+  --color-accent-2-light: #FFC570;
+  --color-accent-2-dark: #E5A03D;
+  
+  /* Backgrounds */
+  --bg-primary: #FAFBFF;
+  --bg-secondary: #F0F3FF;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  
+  /* Text */
+  --text-primary: #2D3142;
+  --text-secondary: #8B8FA3;
+  --text-muted: #B8BDC9;
+  --text-inverse: #FFFFFF;
+  
+  /* Borders & Dividers */
+  --border-color: #E8EBF4;
+  --border-color-strong: #D1D5E4;
+  
+  /* Status Colors */
+  --color-success: #00D9A5;
+  --color-success-bg: rgba(0, 217, 165, 0.1);
+  --color-warning: #FFB547;
+  --color-warning-bg: rgba(255, 181, 71, 0.1);
+  --color-danger: #FF6B6B;
+  --color-danger-bg: rgba(255, 107, 107, 0.1);
+  --color-info: #6C63FF;
+  --color-info-bg: rgba(108, 99, 255, 0.1);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(45, 49, 66, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(45, 49, 66, 0.08), 0 2px 4px -1px rgba(45, 49, 66, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(45, 49, 66, 0.1), 0 4px 6px -2px rgba(45, 49, 66, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(45, 49, 66, 0.1), 0 10px 10px -5px rgba(45, 49, 66, 0.04);
+  --shadow-glow: 0 0 30px rgba(108, 99, 255, 0.3);
+  
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-base: 300ms ease-out;
+  --transition-slow: 400ms ease-out;
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Z-index */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+  
+  /* Layout */
+  --sidebar-width: 280px;
+  --sidebar-collapsed: 72px;
+  --header-height: 72px;
+  --bottom-nav-height: 64px;
+  --max-content-width: 1400px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #1A1B2E;
+  --bg-secondary: #252640;
+  --bg-surface: #252640;
+  --bg-elevated: #2D2E4A;
+  
+  --text-primary: #F0F2FF;
+  --text-secondary: #A0A5C0;
+  --text-muted: #6B7194;
+  
+  --border-color: #3A3C58;
+  --border-color-strong: #4A4C68;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.35), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
