@@ -63,3 +63,11 @@ orbit-zero/
 ```
 
 Le jeu ne nécessite aucun build : il fonctionne directement dans tous les navigateurs modernes.
+
+## Droits d'utilisation
+
+Copyright © 2026 chacal15. Tous droits réservés.
+
+Le code source, le design, les textes et les éléments originaux d'ORBIT//ZERO
+ne peuvent pas être copiés, redistribués, modifiés ou réutilisés sans
+autorisation écrite de l'auteur.
