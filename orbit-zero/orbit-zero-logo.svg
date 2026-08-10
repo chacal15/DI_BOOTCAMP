@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Logo ORBIT ZERO</title>
+  <desc id="desc">Un réacteur central entouré de deux orbes en orbite</desc>
+  <defs>
+    <filter id="glow-cyan" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-violet" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="56" fill="none" stroke="#58f5ff" stroke-width="2" stroke-dasharray="5 9" opacity=".42"/>
+  <ellipse cx="80" cy="80" rx="66" ry="32" fill="none" stroke="#b8fdff" stroke-width="2" opacity=".55" transform="rotate(-24 80 80)"/>
+  <circle cx="28" cy="54" r="8" fill="#58f5ff" filter="url(#glow-cyan)"/>
+  <circle cx="132" cy="106" r="8" fill="#a970ff" filter="url(#glow-violet)"/>
+  <path d="m80 51 25 14v30l-25 14-25-14V65l25-14Z" fill="#101a31" stroke="#58f5ff" stroke-width="3"/>
+  <circle cx="80" cy="80" r="9" fill="#f7fdff" filter="url(#glow-cyan)"/>
+  <path d="M80 67v26M67 80h26" stroke="#58f5ff" stroke-width="2" opacity=".8"/>
+</svg>
