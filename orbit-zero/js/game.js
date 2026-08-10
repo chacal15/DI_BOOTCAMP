@@ -44,7 +44,10 @@ export class OrbitGame {
     };
 
     this.reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || false;
-    this.particles = new ParticleSystem(this.reducedMotion);
+    const coarsePointer = window.matchMedia?.("(pointer: coarse)").matches || false;
+    const limitedMemory = Number.isFinite(navigator.deviceMemory) && navigator.deviceMemory <= 4;
+    this.lowPowerMode = coarsePointer || limitedMemory;
+    this.particles = new ParticleSystem(this.reducedMotion, this.lowPowerMode);
     this.state = "menu";
     this.input = { left: false, right: false, pointerAxis: 0 };
     this.width = 0;
@@ -78,7 +81,7 @@ export class OrbitGame {
     const rect = this.canvas.getBoundingClientRect();
     const width = Math.max(1, Math.round(rect.width || window.innerWidth));
     const height = Math.max(1, Math.round(rect.height || window.innerHeight));
-    const dprCap = this.reducedMotion ? 1.5 : 2;
+    const dprCap = this.reducedMotion ? 1.5 : this.lowPowerMode ? 1.25 : 2;
     const dpr = Math.min(window.devicePixelRatio || 1, dprCap);
 
     this.width = width;
@@ -115,7 +118,8 @@ export class OrbitGame {
   }
 
   createStars() {
-    const count = Math.round(clamp((this.width * this.height) / 10500, 48, this.reducedMotion ? 70 : 120));
+    const maxStars = this.reducedMotion || this.lowPowerMode ? 70 : 120;
+    const count = Math.round(clamp((this.width * this.height) / 10500, 36, maxStars));
     this.stars = Array.from({ length: count }, () => ({
       x: Math.random(),
       y: Math.random(),
@@ -713,7 +717,7 @@ export class OrbitGame {
     ctx.arc(0, 0, this.playerRadius, 0, TAU);
     ctx.stroke();
 
-    const tickCount = 24;
+    const tickCount = this.lowPowerMode ? 12 : 24;
     ctx.rotate(this.ambientTime * 0.025);
     for (let index = 0; index < tickCount; index += 1) {
       const angle = (index / tickCount) * TAU;
@@ -746,13 +750,13 @@ export class OrbitGame {
     ctx.strokeStyle = hexToRgba(gate.color, 0.11 + proximity * 0.12);
     ctx.lineWidth = lineWidth * 2.8;
     ctx.shadowColor = gate.color;
-    ctx.shadowBlur = this.reducedMotion ? 0 : 16 + proximity * 12;
+    ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 16 + proximity * 12;
     this.strokeGateArcs(ctx, gate.radius, gate.angle, gapHalf);
 
     // Corps principal.
     ctx.strokeStyle = hexToRgba(gate.color, 0.65 + proximity * 0.28);
     ctx.lineWidth = lineWidth;
-    ctx.shadowBlur = this.reducedMotion ? 0 : 8 + proximity * 11;
+    ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 8 + proximity * 11;
     this.strokeGateArcs(ctx, gate.radius, gate.angle, gapHalf);
 
     // Fil blanc dynamique qui améliore la lisibilité à haute vitesse.
@@ -796,7 +800,7 @@ export class OrbitGame {
     ctx.strokeStyle = hexToRgba(gate.accent, 0.36 + proximity * 0.35);
     ctx.lineWidth = Math.max(1, lineWidth * 0.18);
     ctx.shadowColor = gate.accent;
-    ctx.shadowBlur = this.reducedMotion ? 0 : 8;
+    ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 8;
 
     for (const angle of edgeAngles) {
       const inner = gate.radius - lineWidth * 1.3;
@@ -820,7 +824,7 @@ export class OrbitGame {
       ctx.rotate(this.ambientTime * 2.5 + side * Math.PI / 2);
       ctx.fillStyle = COLORS.gold;
       ctx.shadowColor = COLORS.gold;
-      ctx.shadowBlur = this.reducedMotion ? 0 : 14;
+      ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 14;
       ctx.beginPath();
       ctx.moveTo(0, -size);
       ctx.lineTo(size * 0.62, 0);
@@ -861,7 +865,7 @@ export class OrbitGame {
     ctx.rotate(this.ambientTime * 0.58);
     ctx.fillStyle = phase ? COLORS.cyan : "#b9b1ff";
     ctx.shadowColor = phase ? COLORS.cyan : COLORS.violet;
-    ctx.shadowBlur = this.reducedMotion ? 0 : 16;
+    ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 16;
     ctx.beginPath();
     for (let side = 0; side < 6; side += 1) {
       const angle = side / 6 * TAU - Math.PI / 2;
@@ -907,7 +911,7 @@ export class OrbitGame {
       ctx.strokeStyle = `rgba(88,245,255,${phaseStrength * 0.42})`;
       ctx.lineWidth = 2 + phaseStrength * 4;
       ctx.shadowColor = COLORS.cyan;
-      ctx.shadowBlur = this.reducedMotion ? 0 : 18;
+      ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 18;
       ctx.beginPath();
       ctx.arc(0, 0, this.playerRadius, 0, TAU);
       ctx.stroke();
@@ -921,7 +925,7 @@ export class OrbitGame {
       ctx.lineWidth = this.orbRadius * (0.45 + phaseStrength * 0.3);
       ctx.lineCap = "round";
       ctx.shadowColor = playerColors[side];
-      ctx.shadowBlur = this.reducedMotion ? 0 : 10;
+      ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 10;
       ctx.beginPath();
       if (direction >= 0) ctx.arc(0, 0, this.playerRadius, angle - trailLength, angle);
       else ctx.arc(0, 0, this.playerRadius, angle, angle + trailLength);
@@ -956,7 +960,7 @@ export class OrbitGame {
     ctx.translate(x, y);
     ctx.fillStyle = hexToRgba(color, detailed ? 0.28 : 0.45);
     ctx.shadowColor = color;
-    ctx.shadowBlur = this.reducedMotion ? 0 : radius * 2.5;
+    ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : radius * 2.5;
     ctx.beginPath();
     ctx.arc(0, 0, radius * 1.72, 0, TAU);
     ctx.fill();
@@ -969,7 +973,7 @@ export class OrbitGame {
     if (detailed) {
       ctx.fillStyle = "rgba(255,255,255,0.95)";
       ctx.shadowColor = "#ffffff";
-      ctx.shadowBlur = this.reducedMotion ? 0 : 9;
+      ctx.shadowBlur = this.reducedMotion || this.lowPowerMode ? 0 : 9;
       ctx.beginPath();
       ctx.arc(-radius * 0.18, -radius * 0.2, radius * 0.38, 0, TAU);
       ctx.fill();

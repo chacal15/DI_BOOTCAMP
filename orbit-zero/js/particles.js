@@ -2,10 +2,10 @@ import { TAU, random, pick } from "./utils.js";
 
 /** Système de particules léger et plafonné pour rester fluide sur mobile. */
 export class ParticleSystem {
-  constructor(reducedMotion = false) {
+  constructor(reducedMotion = false, lowPowerMode = false) {
     this.items = [];
     this.reducedMotion = reducedMotion;
-    this.maxParticles = reducedMotion ? 110 : 460;
+    this.maxParticles = reducedMotion ? 110 : lowPowerMode ? 180 : 460;
   }
 
   clear() {
