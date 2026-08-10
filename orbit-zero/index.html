@@ -8,6 +8,11 @@
   <meta name="author" content="chacal15">
   <meta name="copyright" content="© 2026 chacal15. Tous droits réservés.">
   <link rel="icon" type="image/svg+xml" href="orbit-zero-logo.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="orbit-zero-logo.svg">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>ORBIT//ZERO — Neon Arcade</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -176,5 +181,10 @@
 
   <noscript>ORBIT//ZERO nécessite JavaScript pour fonctionner.</noscript>
   <script type="module" src="js/main.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+    }
+  </script>
 </body>
 </html>

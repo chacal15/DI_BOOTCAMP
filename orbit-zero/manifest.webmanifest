@@ -1,0 +1,20 @@
+{
+  "name": "ORBIT//ZERO",
+  "short_name": "ORBIT ZERO",
+  "description": "Jeu d'arcade orbital tactile et rapide.",
+  "lang": "fr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#060812",
+  "theme_color": "#060812",
+  "icons": [
+    {
+      "src": "orbit-zero-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
