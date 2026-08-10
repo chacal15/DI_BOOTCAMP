@@ -5,6 +5,7 @@ const ASSETS = [
   "./styles.css",
   "./manifest.webmanifest",
   "./orbit-zero-logo.svg",
+  "./orbit-zero-icon-512.png",
   "./js/main.js",
   "./js/game.js",
   "./js/particles.js",

@@ -11,10 +11,10 @@
   "theme_color": "#060812",
   "icons": [
     {
-      "src": "orbit-zero-logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "orbit-zero-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
